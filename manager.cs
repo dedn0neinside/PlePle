@@ -28,6 +28,7 @@ namespace Ple
         }
         private void LoadCategories()
         {
+        //можно одной сторокой измения внести с помощью команды comboBox1.Items.AddRange(new string[] { "...", "...", "..." });
             comboBoxCategories.Items.Add("Напитки");
             comboBoxCategories.Items.Add("Десерты");
             comboBoxCategories.Items.Add("ТТК напитки");
@@ -221,7 +222,7 @@ namespace Ple
                     {
                         cmd.Connection = connection;
                         cmd.Transaction = transaction;
-
+                        //мб через вложенный if лучше?
                         if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(description))
                         {
                             cmd.CommandText = "INSERT INTO drinks (name_drink, description) VALUES (@nameD, @descriptionD)";
