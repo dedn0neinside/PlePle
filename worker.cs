@@ -37,6 +37,7 @@ namespace Ple
         }
         private void LoadComboBoxItems()
         {
+        //опять же с помощью массива одной строкой добавить значения
             comboBoxCategories.Items.Clear();
             comboBoxCategories.Items.Add("Напитки");
             comboBoxCategories.Items.Add("Десерты");
@@ -65,7 +66,7 @@ namespace Ple
                 case "Чек-лист":
                     query = "SELECT * FROM checklist";
                     break;
-
+                    //добавить default?
             }
 
             try
