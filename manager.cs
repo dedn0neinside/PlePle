@@ -28,11 +28,7 @@ namespace Ple
         }
         private void LoadCategories()
         {
-            comboBoxCategories.Items.Add("Напитки");
-            comboBoxCategories.Items.Add("Десерты");
-            comboBoxCategories.Items.Add("ТТК напитки");
-            comboBoxCategories.Items.Add("ТТК десерты");
-            comboBoxCategories.Items.Add("Чек-лист");
+           comboBoxCategories.Items.AddRange(new string[] { "Напитки", "Десерты", "ТТК напитки", "ТТК десерты", "Чек-лист" });
         }
         private void exit_Click_1(object sender, EventArgs e)
         {
@@ -231,7 +227,7 @@ namespace Ple
                             cmd.ExecuteNonQuery();
                         }
 
-                        if (!string.IsNullOrWhiteSpace(name_dessert) && !string.IsNullOrWhiteSpace(description_dessert))
+                        else if (!string.IsNullOrWhiteSpace(name_dessert) && !string.IsNullOrWhiteSpace(description_dessert))
                         {
                             cmd.CommandText = "INSERT INTO desserts (name_dessert, description_dessert) VALUES (@nameDess, @descriptionDess)";
                             cmd.Parameters.Clear();
@@ -240,7 +236,7 @@ namespace Ple
                             cmd.ExecuteNonQuery();
                         }
 
-                        if (!string.IsNullOrWhiteSpace(productsDrink) && !string.IsNullOrWhiteSpace(quantity))
+                        else if (!string.IsNullOrWhiteSpace(productsDrink) && !string.IsNullOrWhiteSpace(quantity))
                         {
                             cmd.CommandText = "INSERT INTO drink_ingredients (name_d, Quantity) VALUES (@productsDrink, @quantityD)";
                             cmd.Parameters.Clear();
@@ -249,7 +245,7 @@ namespace Ple
                             cmd.ExecuteNonQuery();
                         }
 
-                        if (!string.IsNullOrWhiteSpace(name_des) && !string.IsNullOrWhiteSpace(quantityDessert))
+                        else (!string.IsNullOrWhiteSpace(name_des) && !string.IsNullOrWhiteSpace(quantityDessert))
                         {
                             cmd.CommandText = "INSERT INTO dessert_ingredients (name_des, Quantity) VALUES (@ProductsDessert, @quantityDess)";
                             cmd.Parameters.Clear();
