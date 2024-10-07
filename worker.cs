@@ -60,7 +60,9 @@ namespace Ple
                 case "Чек-лист":
                     query = "SELECT * FROM checklist";
                     break;
-
+                default:
+                  MessageBox.Show($"Ошибка, данных не найдено");
+                break;
             }
 
             try
