@@ -37,12 +37,7 @@ namespace Ple
         }
         private void LoadComboBoxItems()
         {
-            comboBoxCategories.Items.Clear();
-            comboBoxCategories.Items.Add("Напитки");
-            comboBoxCategories.Items.Add("Десерты");
-            comboBoxCategories.Items.Add("ТТК напитки");
-            comboBoxCategories.Items.Add("ТТК десерты");
-            comboBoxCategories.Items.Add("Чек-лист");
+           comboBoxCategories.Items.AddRange(new string[] { "Напитки", "Десерты", "ТТК напитки", "ТТК десерты", "Чек-лист" });
         }
 
         private void LoadData(string category)
